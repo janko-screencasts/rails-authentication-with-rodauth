@@ -1,0 +1,7 @@
+<div id="articles">
+  <% @articles.each do |article| %>
+    <%= render article %>
+  <% end %>
+</div>
+
+<%= link_to "+ New article", new_article_path, class: "btn btn-success" %>

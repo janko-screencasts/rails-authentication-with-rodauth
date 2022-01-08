@@ -1,0 +1,16 @@
+<%= form_with model: article do |form| %>
+  <div class="mb-3">
+    <%= form.label :title, style: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :body, style: "form-label" %>
+    <%= form.text_area :body, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to "Back to articles", articles_path, class: "btn btn-link" %>
+  </div>
+<% end %>
