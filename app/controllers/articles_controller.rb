@@ -1,9 +1,10 @@
 class ArticlesController < ApplicationController
+  before_action -> { rodauth.require_authentication }
   before_action :set_article, only: %i[ show edit update destroy ]
 
   # GET /articles
   def index
-    @articles = Article.all
+    @articles = current_account.articles.all
   end
 
   # GET /articles/1
@@ -21,7 +22,7 @@ class ArticlesController < ApplicationController
 
   # POST /articles
   def create
-    @article = Article.new(article_params)
+    @article = current_account.articles.build(article_params)
 
     if @article.save
       redirect_to article_url(@article), notice: "Article was successfully created."
@@ -49,7 +50,7 @@ class ArticlesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
-      @article = Article.find(params[:id])
+      @article = current_account.articles.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

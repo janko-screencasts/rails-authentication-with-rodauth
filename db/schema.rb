@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_03_180947) do
+ActiveRecord::Schema.define(version: 2022_02_03_182352) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2022_02_03_180947) do
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "account_id", null: false
+    t.index ["account_id"], name: "index_articles_on_account_id"
   end
 
   add_foreign_key "account_login_change_keys", "accounts", column: "id"
@@ -61,4 +63,5 @@ ActiveRecord::Schema.define(version: 2022_02_03_180947) do
   add_foreign_key "account_password_reset_keys", "accounts", column: "id"
   add_foreign_key "account_remember_keys", "accounts", column: "id"
   add_foreign_key "account_verification_keys", "accounts", column: "id"
+  add_foreign_key "articles", "accounts"
 end

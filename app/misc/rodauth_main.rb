@@ -30,7 +30,7 @@ class RodauthMain < Rodauth::Rails::Auth
     verify_account_set_password? false
 
     # Redirect back to originally requested location after authentication.
-    # login_return_to_requested_location? true
+    login_return_to_requested_location? true
     # two_factor_auth_return_to_requested_location? true # if using MFA
 
     # Autologin the user after they have reset their password.
@@ -74,7 +74,7 @@ class RodauthMain < Rodauth::Rails::Auth
 
     # Override default flash messages.
     # create_account_notice_flash "Your account has been created. Please verify your account by visiting the confirmation link sent to your email address."
-    # require_login_error_flash "Login is required for accessing this page"
+    require_login_error_flash "Login is required for accessing this page"
     # login_notice_flash nil
 
     # ==> Validation
@@ -129,5 +129,10 @@ class RodauthMain < Rodauth::Rails::Auth
     # reset_password_deadline_interval Hash[hours: 6]
     # verify_login_change_deadline_interval Hash[days: 2]
     # remember_deadline_interval Hash[days: 30]
+
+    login_label "Email"
+
+    create_account_route "register"
+    prefix "/user"
   end
 end
