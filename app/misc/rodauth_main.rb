@@ -2,7 +2,7 @@ class RodauthMain < Rodauth::Rails::Auth
   configure do
     # List of authentication features that are loaded.
     enable :create_account, :verify_account, :verify_account_grace_period,
-      :login, :logout, :remember,
+      :login, :logout, :remember, :email_auth,
       :reset_password, :change_password, :change_password_notify,
       :change_login, :verify_login_change, :close_account
 
