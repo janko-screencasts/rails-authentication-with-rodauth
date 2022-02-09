@@ -13,7 +13,7 @@
     <% if rodauth.logged_in? %>
       <div class="dropdown">
         <button class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" type="button">
-          <%= current_account.email %>
+          <%= current_account.profile.name %>
         </button>
         <div class="dropdown-menu dropdown-menu-end">
           <%= link_to "Change password", rodauth.change_password_path, class: "dropdown-item" %>
