@@ -1,10 +1,10 @@
 # Rails Authentication with Rodauth
 
-Rodauth is a full-featured authentication framework for Ruby web apps. It offers a rich variety of loosely coupled features that can be combined to create a customized authentication experience. This includes advanced features such as multifactor authentication, passwordless authentication, and JSON API access, which are all provided out-of-the-box.
+[Rodauth](https://github.com/jeremyevans/rodauth) is a full-featured authentication framework for Ruby web apps. It offers a rich variety of loosely coupled features that can be combined to create a customized authentication experience. This includes advanced features such as multifactor authentication, passwordless authentication, and JSON API access, which are all provided out-of-the-box.
 
-Rodauth is built on top of the Roda web framework and the Sequel database library, but it can be used with any web framework or ORM, including Rails and Active Record. In this episode, we'll show how to add Rodauth to an existing Rails application. The app we'll be working with has a simple home page, and a section for managing articles. For styling it uses the Bootstrap CSS framework.
+Rodauth is built on top of the [Roda](https://github.com/jeremyevans/roda) web framework and the [Sequel](https://github.com/jeremyevans/sequel) database library, but it can be used with any web framework or ORM, including Rails and Active Record. In this episode, we'll show how to add Rodauth to an existing Rails application. The app we'll be working with has a simple home page, and a section for managing articles. For styling it uses the [Bootstrap](https://getbootstrap.com) CSS framework.
 
-For adding Rodauth, we'll be using the rodauth-rails gem that I created, which takes care of all of the necessary Rails glue code.
+For adding Rodauth, we'll be using the [rodauth-rails](https://github.com/janko/rodauth-rails) gem that I created, which takes care of all of the necessary Rails glue code.
 
 ## Installing Rodauth
 
@@ -315,7 +315,7 @@ Let's now see this in action. We'll fill in the account form details, leaving th
 
 ## Email authentication
 
-The last thing I want to show is how you'd add a new authentication feature. Wouldn't it be nice if instead of typing in their passwords, users had the option to log in via an email link? It turns out that Rodauth ships with the email authentication feature.
+The last thing I want to show is how you'd add a new authentication feature. Wouldn't it be nice if instead of typing in their passwords, users had the option to log in via an email link? It turns out that Rodauth ships with the [email authentication](http://rodauth.jeremyevans.net/rdoc/files/doc/email_auth_rdoc.html) feature.
 
 We'll start by enabling the feature in our Rodauth configuration:
 
